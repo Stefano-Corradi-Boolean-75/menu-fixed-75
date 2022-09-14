@@ -1,0 +1,72 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* questa istruzione crea un movimento della pagina per "raggiungere" l'ancora */
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+header{
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color: #CDCDCD;
+  text-align: center;
+}
+
+nav img{
+  vertical-align: middle;  
+  height: 32px;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  line-height: 70px;
+  margin-right: 30px;
+}
+
+nav ul li a{
+  display: inline-block;
+  padding: 0 5px;
+  line-height: 70px;
+  text-decoration: none;
+  color: #436CE1;
+}
+
+nav ul li a:hover{
+  background-color: darkgrey;
+}
+
+nav ul a.active{
+  border-bottom: 3px solid #66EA67;
+}
+
+
+main{
+  padding-top: 70px;
+}
+
+section h2{
+  margin: 20px 0;
+}
+
+/* trick per risolvere il problema delle ancore che finiscono dietro il menu fixed */
+section::before{
+  content: '';
+  display: block;
+  /* 70px perché il mio menu è alto 70 */
+  height: 70px;
+  /* 70px perché il mio menu è alto 70 */
+  margin: -70px 0 0;
+}
